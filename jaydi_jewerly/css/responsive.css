@@ -1,0 +1,69 @@
+@media screen and (max-width: 768px) {
+  .site-header .container {
+    justify-content: space-between; }
+    .site-header .container:after {
+      z-index: -1; }
+  .mob-navigation {
+    z-index: 9;
+    margin-top: -5px; }
+  .main-navigation {
+    width: auto; }
+    .main-navigation .nav-toggle {
+      -webkit-transition: all 0.25s;
+      transition: all 0.25s;
+      content: "";
+      height: 2px;
+      width: 30px;
+      border-radius: 15px;
+      background-color: #858585;
+      position: absolute;
+      top: 55px;
+      right: 0;
+      z-index: 10; }
+      .main-navigation .nav-toggle::before, .main-navigation .nav-toggle::after {
+        -webkit-transition: all 0.25s;
+        transition: all 0.25s;
+        content: "";
+        position: absolute;
+        left: 0;
+        height: 2px;
+        width: 30px;
+        border-radius: 15px;
+        background-color: #858585; }
+      .main-navigation .nav-toggle::before {
+        top: -8px; }
+      .main-navigation .nav-toggle::after {
+        top: 8px; }
+    .main-navigation .menu-container {
+      display: none; }
+  .nav-expanded .nav-toggle {
+    background-color: transparent;
+    -webkit-transition: all 0.25s;
+    transition: all 0.25s; }
+    .nav-expanded .nav-toggle:before {
+      -webkit-transition: all 0.25s;
+      transition: all 0.25s;
+      top: 0;
+      -webkit-transform: rotate(45deg);
+      transform: rotate(45deg); }
+    .nav-expanded .nav-toggle:after {
+      -webkit-transition: all 0.25s;
+      transition: all 0.25s;
+      top: 0px;
+      -webkit-transform: rotate(-45deg);
+      transform: rotate(-45deg); }
+  .single-post .entry-content,
+  .single-post .entry-meta,
+  .single-post .comments-area {
+    padding: 0 10px; }
+  .type-page {
+    padding: 0 10px; }
+  .site-footer .container {
+    flex-direction: column; }
+  .site-footer .footer-logo {
+    margin-right: 0;
+    margin-bottom: 10px; }
+  .site-footer .footer-widget-block .textwidget p {
+    flex-direction: column; }
+    .site-footer .footer-widget-block .textwidget p a {
+      margin-left: 0; } }

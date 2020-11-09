@@ -1,0 +1,185 @@
+/* Mixins */
+.navigation-mask {
+  width: 100%;
+  height: 100px;
+  position: absolute;
+  top: 0;
+  background-color: lightgrey;
+  z-index: 3; }
+  @media only screen and (min-width: 768px) {
+    .navigation-mask {
+      display: none; } }
+
+.navigation-container {
+  padding-top: 0px;
+  padding-bottom: 0px;
+  margin-top: 50px;
+  width: 100%;
+  background-color: white;
+  margin-left: auto;
+  margin-right: auto;
+  display: block; }
+  @media only screen and (min-width: 768px) {
+    .navigation-container {
+      padding-top: 15px;
+      padding-bottom: 15px; } }
+
+.main-navigation {
+  width: 100%; }
+  @media only screen and (min-width: 768px) {
+    .main-navigation {
+      display: flex;
+      justify-content: center; } }
+  .main-navigation .menu-container {
+    width: 100%;
+    position: relative; }
+    @media only screen and (min-width: 768px) {
+      .main-navigation .menu-container {
+        display: flex;
+        justify-content: center;
+        width: 50%; } }
+    .main-navigation .menu-container ul {
+      position: absolute;
+      top: 0px;
+      background-color: white;
+      z-index: 2;
+      transform: translateY(-150%);
+      transition: transform 0.4s ease-in 0s;
+      clear: both;
+      list-style: none;
+      width: 100%;
+      padding: 0;
+      margin: 0; }
+      @media only screen and (min-width: 768px) {
+        .main-navigation .menu-container ul {
+          display: flex;
+          width: 100%;
+          position: relative;
+          transform: translateY(0);
+          top: 0; } }
+      .main-navigation .menu-container ul > li {
+        padding-left: 0px;
+        padding-right: 0px;
+        flex-grow: 1;
+        flex-basis: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: all 0.3s ease-in 0s;
+        z-index: 1;
+        border-bottom: 1px solid lightgrey; }
+        .main-navigation .menu-container ul > li:first-child {
+          border-top: 1px solid lightgrey; }
+          @media only screen and (min-width: 768px) {
+            .main-navigation .menu-container ul > li:first-child {
+              border-top: 1px solid transparent; } }
+        .main-navigation .menu-container ul > li:focus, .main-navigation .menu-container ul > li:active {
+          outline: 0; }
+        .main-navigation .menu-container ul > li:hover, .main-navigation .menu-container ul > li:focus {
+          background-color: black;
+          border-bottom: 1px solid black;
+          transition: all 0.3s ease-in 0s; }
+          .main-navigation .menu-container ul > li:hover:first-child, .main-navigation .menu-container ul > li:focus:first-child {
+            border-top: 1px solid black; }
+            @media only screen and (min-width: 768px) {
+              .main-navigation .menu-container ul > li:hover:first-child, .main-navigation .menu-container ul > li:focus:first-child {
+                border-top: 1px solid transparent; } }
+          .main-navigation .menu-container ul > li:hover a, .main-navigation .menu-container ul > li:focus a {
+            color: white;
+            font-size: 14px;
+            transition: color 0.4s ease-in 0s; }
+            @media only screen and (min-width: 768px) {
+              .main-navigation .menu-container ul > li:hover a, .main-navigation .menu-container ul > li:focus a {
+                font-size: 16px; } }
+        .main-navigation .menu-container ul > li > a {
+          -webkit-font-smoothing: antialiased;
+          text-decoration: none;
+          color: black;
+          line-height: 50px;
+          font-size: 14px;
+          transition: color 0.4s ease-in 0s;
+          white-space: nowrap;
+          width: 100%;
+          text-align: center; }
+          @media only screen and (min-width: 768px) {
+            .main-navigation .menu-container ul > li > a {
+              font-size: 16px; } }
+
+/* nav.js in project */
+.main-navigation.toggled .button-container .menu-button .hamburger {
+  left: -34px;
+  opacity: 0;
+  transition: all 0.4s ease-in 0s; }
+
+.main-navigation.toggled .button-container .menu-button:before {
+  top: 24px;
+  transform: rotate(135deg);
+  transition: all 0.4s ease-in 0s; }
+
+.main-navigation.toggled .button-container .menu-button:after {
+  top: 24px;
+  transform: rotate(-135deg);
+  transition: all 0.4s ease-in 0s; }
+
+.main-navigation.toggled .menu-container ul {
+  transform: translateY(0);
+  transition: transform 0.4s ease-out 0s; }
+  @media only screen and (min-width: 768px) {
+    .main-navigation.toggled .menu-container ul {
+      display: flex;
+      position: relative; } }
+
+.button-container {
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+  background-color: white;
+  position: relative;
+  z-index: 4; }
+  @media only screen and (min-width: 768px) {
+    .button-container {
+      display: none; } }
+  .button-container .menu-button {
+    position: relative;
+    padding: 0;
+    width: 50px;
+    height: 50px;
+    float: right;
+    background-color: #ffffff;
+    border-radius: 0;
+    border: none; }
+    @media only screen and (min-width: 768px) {
+      .button-container .menu-button {
+        display: none; } }
+    .button-container .menu-button:focus {
+      outline: 0; }
+    .button-container .menu-button:hover .hamburger, .button-container .menu-button:hover:before, .button-container .menu-button:hover:after {
+      background-color: gray;
+      /*all is applied in custom-menu.toggled as well - otherwise background-color could be used instead of all*/
+      transition: all 0.4s ease-in 0s; }
+    .button-container .menu-button .hamburger {
+      position: absolute;
+      top: 24px;
+      left: 8px;
+      width: 34px;
+      height: 1px;
+      background-color: black;
+      transition: background-color 0.2s ease-in 0s; }
+    .button-container .menu-button:before {
+      content: "";
+      position: absolute;
+      top: 12px;
+      left: 8px;
+      width: 34px;
+      height: 1px;
+      background-color: black;
+      transition: background-color 0.2s ease-in 0s; }
+    .button-container .menu-button:after {
+      content: "";
+      position: absolute;
+      top: 36px;
+      left: 8px;
+      width: 34px;
+      height: 1px;
+      background-color: black;
+      transition: background-color 0.2s ease-in 0s; }
