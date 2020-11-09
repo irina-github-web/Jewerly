@@ -1,0 +1,2 @@
+# Jewerly
+Little Wordpress Theme
