@@ -159,6 +159,13 @@ function jaydi_jewerly_scripts() {
 	}
 
 	wp_enqueue_style( 'load-fa', 'https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css' );
+
+	wp_register_style('google-playfair', 'https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;1,400&display=swap', array(), null, 'all');
+	wp_enqueue_style('google-playfair');
+
+	wp_register_style('google-lato', 'https://fonts.googleapis.com/css2?family=Lato:ital@0;1&display=swap', array(), null, 'all');
+	wp_enqueue_style('google-lato');
+
 	wp_enqueue_style("jaydi_jewerly-cstyle", get_template_directory_uri() . "/css/main.css", array(), '1.0');
 	wp_enqueue_script("jaydi_jewerly-cscript", get_template_directory_uri() . "/js/main.js", array(), true);
 }
