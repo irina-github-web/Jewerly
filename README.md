@@ -1,5 +1,5 @@
 # Jewerly
-Little Wordpress Blog
+Wordpress Blog using scss & gulp
 
 ## Screenshorts
 
